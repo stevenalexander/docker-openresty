@@ -1,9 +1,15 @@
-# About this Repo
+# Docker OpenResty
 
-This is the Git repo of the official Docker image for [nginx](https://registry.hub.docker.com/_/nginx/). See the
-Hub page for the full readme on how to use the Docker image and for information
-regarding contributing and issues.
+Example Dockerfile for building an [nginx](http://wiki.nginx.org/Main) image with [OpenResty](http://openresty.org). Based off the original [docker/nginx](https://github.com/dockerfile/nginx) image.
 
-The full readme is generated over in [docker-library/docs](https://github.com/docker-library/docs),
-specificially in [docker-library/docs/nginx](https://github.com/docker-library/docs/tree/master/nginx).
+## Run
 
+```
+# build image
+docker build -t stevena/openresty:v1 .
+
+# run container
+docker run -t -i -p 80:8080 -v=`pwd`/conf:/opt/nginx/conf -w=/opt/nginx/conf stevena/openresty:v1
+
+# curl your boot2docker VM IP and you will see "Hello World by Lua!"
+```

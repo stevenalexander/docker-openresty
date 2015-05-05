@@ -1,0 +1,6 @@
+*.*
+logs/*
+!.gitignore
+!example.lua
+!nginx.conf
+!logs/.gitignore
